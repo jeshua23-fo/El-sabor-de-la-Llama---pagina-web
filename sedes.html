@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sedes – Sizzle & Sear</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/sedes.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand">Sizzle <span>&</span> Sear</a>
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="menu.html">Menú</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="sedes.html" class="active">Sedes</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <button class="cart-btn" aria-label="Carrito">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-count">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menú móvil">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="loc-hero">
+    <div class="loc-hero__bg">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600&q=80" alt="Interior restaurante" class="loc-hero__img" />
+      <div class="loc-hero__overlay"></div>
+      <div class="loc-hero__ghost" aria-hidden="true">SEDES</div>
+    </div>
+    <div class="loc-hero__content container">
+      <h1 class="loc-hero__title">NUESTRAS SEDES</h1>
+      <p class="loc-hero__sub">Tres santuarios distintos del sabor callejero. Ambiente elevado, ingredientes premium y el pulso de la ciudad en cada bocado.</p>
+    </div>
+  </section>
+
+  <!-- ===== LOCATION CARDS ===== -->
+  <section class="loc-cards-section">
+    <div class="container">
+      <div class="loc-grid">
+
+        <!-- ── The District ── -->
+        <article class="loc-card reveal">
+          <div class="loc-card__img-wrap">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80" alt="El Distrito" />
+            <span class="loc-badge">Buque insignia del centro</span>
+          </div>
+          <div class="loc-card__body">
+            <h2 class="loc-card__name">El Distrito</h2>
+            <ul class="loc-info">
+              <li class="loc-info__item">
+                <svg class="loc-info__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>124 Industrial Way, Suite 400<br/>Central Business District</span>
+              </li>
+              <li class="loc-info__item">
+                <svg class="loc-info__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>+1 (555) 012-3456</span>
+              </li>
+              <li class="loc-info__item">
+                <svg class="loc-info__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span><strong>Lun – Jue: 12:00 – 23:00</strong><br/>Vie – Dom: 12:00 – 01:00</span>
+              </li>
+            </ul>
+            <a href="https://www.google.com/maps/search/?api=1&query=Meatpacking+District+New+York+NY+10014" target="_blank" rel="noopener" class="btn-directions">
+              VER RUTA
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Neon Junction ── -->
+        <article class="loc-card reveal">
+          <div class="loc-card__img-wrap">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Cruce de Neón" />
+              <span class="loc-badge">Urbano East Side</span>
+          </div>
+          <div class="loc-card__body">
+            <h2 class="loc-card__name">Cruce de Neón</h2>
+            <ul class="loc-info">
+              <li class="loc-info__item">
+                <svg class="loc-info__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>88 Street Culture Plaza<br/>The Arts Quarter</span>
+              </li>
+              <li class="loc-info__item">
+                <svg class="loc-info__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>+1 (555) 987-6543</span>
+              </li>
+              <li class="loc-info__item">
+                <svg class="loc-info__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span><strong>Lun – Dom: 11:30 – 00:00</strong><br/>Abierto hasta tarde para el público nocturno</span>
+              </li>
+            </ul>
+            <a href="https://www.google.com/maps/search/?api=1&query=Lower+East+Side+New+York+NY+10002" target="_blank" rel="noopener" class="btn-directions">
+              VER RUTA
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Sky Grill ── -->
+        <article class="loc-card reveal">
+          <div class="loc-card__img-wrap">
+            <img src="https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=800&q=80" alt="Grill Celeste" />
+            <span class="loc-badge">Alturas de la terraza</span>
+          </div>
+          <div class="loc-card__body">
+            <h2 class="loc-card__name">Grill Celeste</h2>
+            <ul class="loc-info">
+              <li class="loc-info__item">
+                <svg class="loc-info__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>22nd Floor, Apex Tower<br/>Skyline Drive</span>
+              </li>
+              <li class="loc-info__item">
+                <svg class="loc-info__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>+1 (555) 456-7890</span>
+              </li>
+              <li class="loc-info__item">
+                <svg class="loc-info__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span><strong>Mar – Dom: 17:00 – 02:00</strong><br/>Solo cena y noche</span>
+              </li>
+            </ul>
+            <a href="https://www.google.com/maps/search/?api=1&query=Hudson+Yards+New+York+NY+10001" target="_blank" rel="noopener" class="btn-directions">
+              VER RUTA
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MAP SECTION ===== -->
+  <section class="loc-map-section">
+    <div class="loc-map-container">
+
+      <!-- Google Maps iframe con estilo oscuro -->
+      <div class="loc-map-frame">
+        <iframe
+          class="loc-map-iframe"
+          src="https://maps.google.com/maps?q=Manhattan+New+York&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Sedes Sizzle &amp; Sear"
+        ></iframe>
+        <!-- Tinte oscuro naranja sobre el mapa -->
+        <div class="loc-map-tint" aria-hidden="true"></div>
+        <!-- Pins animados flotantes sobre el mapa -->
+        <div class="loc-map-pins" aria-hidden="true">
+          <div class="map-pin" style="top:28%;left:35%">
+            <div class="map-pin__ring"></div>
+            <div class="map-pin__dot"></div>
+            <span class="map-pin__label">The District</span>
+          </div>
+          <div class="map-pin" style="top:50%;left:60%">
+            <div class="map-pin__ring"></div>
+            <div class="map-pin__dot"></div>
+            <span class="map-pin__label">Neon Junction</span>
+          </div>
+          <div class="map-pin" style="top:70%;left:42%">
+            <div class="map-pin__ring"></div>
+            <div class="map-pin__dot"></div>
+            <span class="map-pin__label">Sky Grill</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info card flotante -->
+      <div class="loc-map-card reveal">
+        <p class="loc-map-card__label">Encuéntranos en todas partes</p>
+        <p class="loc-map-card__desc">Nuestras sedes están ubicadas estratégicamente en el corazón de los distritos más vibrantes de la ciudad. Disfruta el chisporroteo, donde quiera que estés.</p>
+        <div class="loc-map-card__dots">
+          <span class="mdot mdot--1"></span>
+          <span class="mdot mdot--2"></span>
+          <span class="mdot mdot--3"></span>
+          <span class="loc-map-card__count">3 sedes exclusivas</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="loc-cta">
+    <div class="loc-cta__glow" aria-hidden="true"></div>
+    <div class="container loc-cta__inner reveal">
+      <p class="loc-cta__eyebrow">La experiencia te espera</p>
+      <h2 class="loc-cta__title">¿Listo para reclamar tu mesa?</h2>
+      <p class="loc-cta__sub">Recomendamos reservar con anticipación en horas pico. Asegura tu lugar en el corazón de la cultura callejera.</p>
+      <div class="loc-cta__actions">
+        <button class="btn-reserve" id="bookBtn">RESERVAR UNA MESA</button>
+        <a href="menu.html" class="btn-view-menu">VER MENÚ COMPLETO</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="loc-footer">
+    <div class="container loc-footer__inner">
+      <div class="loc-footer__brand">
+        <p class="loc-footer__name">Sizzle &amp; Sear</p>
+        <p class="loc-footer__copy">© 2024 Sizzle &amp; Sear. Cultura callejera elevada.</p>
+      </div>
+      <div class="loc-footer__links">
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos de servicio</a>
+        <a href="#">Carreras</a>
+        <a href="#">Kit de prensa</a>
+      </div>
+      <div class="loc-footer__socials">
+        <a href="#" aria-label="Share">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </a>
+        <a href="#" aria-label="Email">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== RESERVATION MODAL ===== -->
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" id="modalClose" aria-label="Cerrar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <p class="modal__eyebrow">Sizzle &amp; Sear</p>
+      <h3 class="modal__title" id="modalTitle">Reserva tu mesa</h3>
+      <p class="modal__sub">Selecciona una sede y reservaremos tu lugar junto a la llama.</p>
+      <form class="modal__form" id="reservationForm" novalidate>
+        <div class="modal__field">
+          <label for="m-location">Sede</label>
+          <select id="m-location" name="location">
+            <option value="district">El Distrito – Buque insignia del centro</option>
+            <option value="neon">Cruce de Neón – Urbano East Side</option>
+            <option value="sky">Grill Celeste – Alturas de la terraza</option>
+          </select>
+        </div>
+        <div class="modal__row">
+          <div class="modal__field">
+          <label for="m-date">Fecha</label>
+            <input type="date" id="m-date" name="date" />
+          </div>
+          <div class="modal__field">
+          <label for="m-time">Hora</label>
+            <input type="time" id="m-time" name="time" value="19:00" />
+          </div>
+        </div>
+        <div class="modal__field">
+          <label for="m-guests">Personas</label>
+          <select id="m-guests" name="guests">
+            <option>1 persona</option>
+            <option selected>2 personas</option>
+            <option>3 personas</option>
+            <option>4 personas</option>
+            <option>5+ personas</option>
+          </select>
+        </div>
+        <div class="modal__field">
+          <label for="m-name">Nombre</label>
+          <input type="text" id="m-name" name="name" placeholder="Tu nombre completo" />
+        </div>
+        <div class="modal__field">
+          <label for="m-email">Correo</label>
+          <input type="email" id="m-email" name="email" placeholder="tu@correo.com" />
+        </div>
+        <button type="submit" class="btn-reserve modal__submit">CONFIRMAR RESERVA</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/sedes.js"></script>
+</body>
+</html>

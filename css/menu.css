@@ -1,0 +1,512 @@
+/* ============================================================
+   SIZZLE & SEAR – menu.css
+   ============================================================ */
+
+/* ---------- Menu Hero ---------- */
+.menu-hero {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--nav-h) + 60px) 24px 70px;
+  background: var(--dark);
+  overflow: hidden;
+}
+
+/* Humo animado via pseudo + SVG filter */
+.menu-hero__smoke {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 100%, rgba(232,80,10,.13) 0%, transparent 70%),
+    radial-gradient(ellipse 80% 40% at 30% 60%,  rgba(245,197,24,.06) 0%, transparent 70%);
+  animation: smokeShift 8s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+.menu-hero::before {
+  content: '';
+  position: absolute;
+  top: -20%; left: 50%;
+  transform: translateX(-50%);
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(232,80,10,.18) 0%, transparent 70%);
+  filter: blur(40px);
+  animation: smokeRise 6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes smokeShift {
+  from { opacity: .6; transform: scale(1); }
+  to   { opacity: 1;  transform: scale(1.08); }
+}
+@keyframes smokeRise {
+  0%,100% { transform: translateX(-50%) translateY(0)   scale(1);   opacity: .5; }
+  50%      { transform: translateX(-50%) translateY(-20px) scale(1.1); opacity: .9; }
+}
+
+.menu-hero__content { position: relative; z-index: 1; max-width: 620px; }
+
+.menu-hero__title {
+  font-family: var(--font-head);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: .02em;
+  line-height: 1;
+  margin-bottom: 18px;
+  animation: fadeUp .7s .1s both;
+}
+
+.menu-hero__sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,.65);
+  line-height: 1.65;
+  max-width: 480px;
+  margin-inline: auto;
+  animation: fadeUp .7s .25s both;
+}
+
+/* ---------- Tabs ---------- */
+.menu-tabs-wrap {
+  background: var(--dark);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 50;
+}
+
+.menu-tabs {
+  max-width: 1140px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.menu-tabs::-webkit-scrollbar { display: none; }
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: var(--gray);
+  font-family: var(--font-body);
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 16px 22px;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  transition: color var(--trans);
+}
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 100%;
+  height: 2px;
+  background: var(--orange);
+  transition: right var(--trans);
+}
+.tab-btn:hover { color: var(--gray-lt); }
+.tab-btn.active { color: var(--orange); }
+.tab-btn.active::after { right: 0; }
+
+/* ---------- Main ---------- */
+.menu-main {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* ---------- Section titles ---------- */
+.menu-section__title {
+  font-family: var(--font-head);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: .02em;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(232,80,10,.35);
+  position: relative;
+}
+.menu-section__title::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0;
+  width: 60px; height: 2px;
+  background: var(--orange);
+}
+
+/* ============================================================
+   SIGNATURE BURGERS
+   ============================================================ */
+.burgers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.burger-card {
+  background: var(--dark-3);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.06);
+  transition: transform var(--trans), box-shadow var(--trans);
+  display: flex;
+  flex-direction: column;
+}
+.burger-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0,0,0,.6);
+}
+
+.burger-card__img {
+  height: 220px;
+  overflow: hidden;
+}
+.burger-card__img img {
+  transition: transform .5s ease;
+}
+.burger-card:hover .burger-card__img img { transform: scale(1.07); }
+
+.burger-card__body {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.burger-card__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.burger-card__row h3 {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+}
+
+.burger-card__body p {
+  font-size: .84rem;
+  color: rgba(255,255,255,.6);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.price {
+  color: var(--yellow);
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  white-space: nowrap;
+}
+
+.burger-card__tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.tag {
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+}
+.tag--chef   { border-color: var(--orange); color: var(--orange); }
+.tag--spicy  { background: rgba(232,80,10,.15); color: var(--orange-lt); border-color: rgba(232,80,10,.3); }
+.tag--crowd  { border-color: var(--yellow); color: var(--yellow); }
+.tag--premium{ background: rgba(245,197,24,.1); color: var(--yellow); border-color: rgba(245,197,24,.3); }
+
+/* ============================================================
+   THE SIDES
+   ============================================================ */
+.sides-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.side-card {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--dark-3);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.06);
+  transition: transform var(--trans), box-shadow var(--trans);
+}
+.side-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(0,0,0,.5);
+}
+
+.side-card__img {
+  width: 130px;
+  min-width: 130px;
+  height: 130px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.side-card__img img { transition: transform .5s ease; }
+.side-card:hover .side-card__img img { transform: scale(1.08); }
+
+.side-card__body {
+  padding: 16px 20px;
+  flex: 1;
+}
+.side-card__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.side-card__row h3 {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+}
+.side-card__body p {
+  font-size: .82rem;
+  color: rgba(255,255,255,.55);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   CHILLED & SWEETS
+   ============================================================ */
+.drinks-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.7fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.drinks-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.drinks-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Base drink card */
+.drink-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.06);
+  transition: transform var(--trans), box-shadow var(--trans);
+  background: var(--dark-3);
+}
+.drink-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(0,0,0,.6);
+}
+.drink-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+.drink-card:hover img { transform: scale(1.05); }
+
+/* Hero (izquierda grande) */
+.drink-card--hero {
+  height: 100%;
+  min-height: 380px;
+}
+.drink-card--hero img { height: 100%; }
+
+/* Wide (Molten Asphalt) */
+.drink-card--wide {
+  height: 200px;
+}
+.drink-card--wide img { height: 100%; }
+
+/* Shake */
+.drink-card--shake {
+  height: 190px;
+}
+.drink-card--shake img { height: 100%; }
+
+/* Flat (Craft Sodas – sin imagen) */
+.drink-card--flat {
+  min-height: 190px;
+  display: flex;
+  align-items: stretch;
+}
+.drink-card__flat-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.drink-card__flat-body h3 {
+  font-family: var(--font-head);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+}
+.drink-card__flat-body p {
+  font-size: .82rem;
+  color: rgba(255,255,255,.55);
+  line-height: 1.6;
+  flex: 1;
+}
+.drink-icons {
+  display: flex;
+  gap: 10px;
+  color: var(--gray);
+  margin-top: 4px;
+}
+
+/* Overlay de texto sobre imagen */
+.drink-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.85) 0%, transparent 55%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  gap: 4px;
+}
+.drink-card__overlay h3 {
+  font-family: var(--font-head);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+}
+.drink-card__overlay p {
+  font-size: .8rem;
+  color: rgba(255,255,255,.65);
+  line-height: 1.55;
+}
+.drink-card__overlay .price { font-size: .95rem; }
+
+.drink-card__overlay--bottom {
+  justify-content: flex-end;
+  background: linear-gradient(to top, rgba(0,0,0,.88) 0%, transparent 60%);
+}
+
+/* ============================================================
+   FLOATING ORDER BUTTON
+   ============================================================ */
+.float-order {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 90;
+  background: var(--orange);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 22px;
+  font-family: var(--font-body);
+  font-size: .84rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 24px rgba(232,80,10,.5);
+  transition: background var(--trans), transform var(--trans), box-shadow var(--trans);
+  animation: floatPop .5s .8s both cubic-bezier(.34,1.56,.64,1);
+}
+.float-order:hover {
+  background: var(--orange-lt);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px rgba(232,80,10,.65);
+}
+@keyframes floatPop {
+  from { opacity: 0; transform: scale(.7) translateY(10px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.menu-footer {
+  background: #080808;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.menu-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 40px;
+}
+.menu-footer__brand .brand-name {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.menu-footer__brand p {
+  font-size: .8rem;
+  color: var(--gray);
+  max-width: 240px;
+  line-height: 1.55;
+}
+.menu-footer__links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+.menu-footer__links a {
+  font-size: .8rem;
+  color: var(--gray);
+  transition: color var(--trans);
+}
+.menu-footer__links a:hover { color: var(--white); }
+.menu-footer__copy {
+  width: 100%;
+  text-align: right;
+  font-size: .75rem;
+  color: rgba(255,255,255,.3);
+  margin-top: 8px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 960px) {
+  .burgers-grid { grid-template-columns: 1fr 1fr; }
+  .drinks-grid  { grid-template-columns: 1fr; }
+  .drink-card--hero { min-height: 280px; height: 280px; }
+}
+
+@media (max-width: 680px) {
+  .burgers-grid { grid-template-columns: 1fr; }
+  .sides-grid   { grid-template-columns: 1fr; }
+  .drinks-row   { grid-template-columns: 1fr; }
+  .drink-card--wide, .drink-card--shake, .drink-card--hero { height: 220px; min-height: 220px; }
+  .menu-footer__links { margin-left: 0; }
+  .menu-footer__copy  { text-align: left; }
+  .float-order { bottom: 16px; right: 16px; padding: 12px 16px; font-size: .78rem; }
+}

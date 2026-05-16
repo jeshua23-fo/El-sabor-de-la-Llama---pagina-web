@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre Nosotros – Sizzle & Sear</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/nosotros.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand">Sizzle <span>&</span> Sear</a>
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="menu.html">Menú</a>
+        <a href="nosotros.html" class="active">Nosotros</a>
+        <a href="sedes.html">Sedes</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <button class="cart-btn" aria-label="Carrito">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-count">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menú móvil">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="ab-hero">
+    <div class="ab-hero__bg">
+      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=1600&q=80" alt="Fuego en la cocina" class="ab-hero__img" />
+      <div class="ab-hero__overlay"></div>
+    </div>
+    <div class="ab-hero__content container">
+      <p class="ab-hero__eyebrow">Establecido 2018</p>
+      <h1 class="ab-hero__title">
+        El sabor de la<br />
+        <span class="accent">llama.</span>
+      </h1>
+      <p class="ab-hero__sub">
+        No solo cocinamos; encendemos. Sizzle & Sear es la intersección entre la energía urbana cruda y la precisión culinaria. Nacido en los callejones y elevado hasta la azotea.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== STREET ROOTS ===== -->
+  <section class="roots section-pad">
+    <div class="container roots__grid">
+      <div class="roots__img-wrap reveal">
+        <img src="https://images.unsplash.com/photo-1514190051997-0f6f39ca5cde?w=700&q=80" alt="Origen callejero" />
+        <div class="roots__img-glow"></div>
+      </div>
+      <div class="roots__text reveal">
+        <h2 class="roots__title">Raíces urbanas,<br />alma global.</h2>
+        <p>Nuestro viaje comenzó con una plancha personalizada en una esquina del Meatpacking District. Nos obsesionaba la química del sellado: ese momento perfecto donde el calor transforma una simple proteína en una obra maestra de textura.</p>
+        <p>Hoy, hemos cambiado la acera por el estudio, pero la esencia permanece. Cada hamburguesa, cada brisket y cada verdura a la parrilla cuenta la historia de nuestra herencia: ingredientes auténticos cocinados a fuego puro.</p>
+        <a href="#" class="btn btn-primary" style="margin-top:10px">Lee nuestro manifiesto</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section class="process section-pad">
+    <div class="container">
+      <div class="process__header reveal">
+        <h2 class="process__title">El <span class="accent">proceso</span> del alquimista</h2>
+      </div>
+
+      <div class="process__grid">
+        <!-- Card grande izquierda -->
+        <article class="process-card process-card--hero reveal">
+          <div class="process-card__img">
+            <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=700&q=80" alt="Maduración en seco 45 días" />
+          </div>
+          <div class="process-card__tag">La base</div>
+          <div class="process-card__body">
+            <h3>Maduración en seco 45 días</h3>
+            <p>Desarrollando complejidad profunda y avellanada en cada corte mediante control climático de precisión.</p>
+          </div>
+        </article>
+
+        <!-- Columna derecha -->
+        <div class="process__col">
+          <!-- Card imagen top-right -->
+          <article class="process-card process-card--img-right reveal">
+            <div class="process-card__body">
+              <div class="process-card__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+              </div>
+              <h3>Brioche artesanal</h3>
+              <p>Amasado a mano diariamente con harina de papa fermentada y mantequilla cultivada local.</p>
+            </div>
+            <div class="process-card__side-img">
+              <img src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=300&q=80" alt="Brioche" />
+            </div>
+          </article>
+
+          <!-- Fila inferior: 2 cards pequeñas -->
+          <div class="process__row">
+            <article class="process-card process-card--small reveal">
+              <div class="process-card__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8C8 10 5.9 16.17 3.82 19.5"/><path d="M12 17c1-2 3-4 4.5-6"/><path d="M19 4c-1.5 1-2 2.5-2 4"/></svg>
+              </div>
+              <h3>Ahumado en roble</h3>
+              <p>Reposo tras el sellado en humo de roble reciclado de Kentucky para un acabado inconfundible.</p>
+            </article>
+
+            <article class="process-card process-card--small reveal">
+              <div class="process-card__icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <h3>La pistola de sellado</h3>
+              <p>Acabado de precisión en la mesa usando nuestras antorchas térmicas personalizadas de 1.300°.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GROWN IN DIRT ===== -->
+  <section class="dirt section-pad">
+    <div class="container dirt__grid">
+      <div class="dirt__text reveal">
+        <h2 class="dirt__title">
+          Crecido en tierra,<br />
+          <span class="accent">no en laboratorios.</span>
+        </h2>
+        <p>Nos asociamos exclusivamente con agricultores independientes que respetan la tierra tanto como nosotros respetamos la llama. Desde los tomates heritage del Valle de Hudson hasta el ganado alimentado con pasto de las tierras altas de Montana.</p>
+        <ul class="dirt__list">
+          <li>
+            <span class="dirt__list-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+            </span>
+            <div>
+              <strong>Abastecimiento sin desperdicio</strong>
+              <span>Aprovechando cada corte de cada cosecha.</span>
+            </div>
+          </li>
+          <li>
+            <span class="dirt__list-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+            </span>
+            <div>
+              <strong>Radio de 100 millas</strong>
+              <span>El 90% de nuestros productos viaja menos de 100 millas.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="dirt__images reveal">
+        <div class="dirt__img-main">
+          <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=80" alt="Campo al atardecer" />
+        </div>
+        <div class="dirt__img-sec">
+          <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=500&q=80" alt="Vegetales frescos" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEAM ===== -->
+  <section class="team section-pad">
+    <div class="container">
+      <div class="team__header reveal">
+        <h2 class="team__title">Los arquitectos del <span class="accent">calor</span></h2>
+        <p class="team__sub">Conoce a los visionarios, maestros del grill y rebeldes detrás de la puerta de la cocina.</p>
+      </div>
+      <div class="team__grid">
+
+        <article class="team-card reveal">
+          <div class="team-card__img">
+            <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=500&q=80" alt="Marcus Thorne" />
+            <div class="team-card__overlay"></div>
+          </div>
+          <div class="team-card__body">
+            <h3>Marcus Thorne</h3>
+            <span class="team-card__role">Chef Ejecutivo y Fundador</span>
+          </div>
+        </article>
+
+        <article class="team-card reveal">
+          <div class="team-card__img">
+            <img src="https://images.unsplash.com/photo-1607631568010-a87245c0daf8?w=500&q=80" alt="Elena Vance" />
+            <div class="team-card__overlay"></div>
+          </div>
+          <div class="team-card__body">
+            <h3>Elena Vance</h3>
+            <span class="team-card__role">Jefa de Operaciones de Ahumado</span>
+          </div>
+        </article>
+
+        <article class="team-card reveal">
+          <div class="team-card__img">
+            <img src="https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?w=500&q=80" alt="Kaito Sato" />
+            <div class="team-card__overlay"></div>
+          </div>
+          <div class="team-card__body">
+            <h3>Kaito Sato</h3>
+            <span class="team-card__role">Maestro Panadero</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="ab-cta">
+    <div class="ab-cta__inner container">
+      <h2 class="ab-cta__title">¿Listo para escuchar el <span class="accent">chisporroteo?</span></h2>
+      <div class="ab-cta__actions">
+        <a href="index.html#contacto" class="btn btn-primary">Reserva tu mesa</a>
+        <a href="menu.html" class="btn btn-ghost">Ver menú</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="ab-footer">
+    <div class="ab-footer__inner container">
+      <div class="ab-footer__brand">
+        <p class="ab-footer__name">Sizzle &amp; Sear</p>
+        <p class="ab-footer__copy">© 2024 Sizzle &amp; Sear. Cultura callejera elevada.</p>
+      </div>
+      <div class="ab-footer__links">
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos de servicio</a>
+        <a href="index.html#sedes">Carreras</a>
+        <a href="#">Kit de prensa</a>
+      </div>
+      <div class="ab-footer__socials">
+        <a href="#" aria-label="Settings">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </a>
+        <a href="#" aria-label="Globe">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </a>
+        <a href="#" aria-label="Share">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/nosotros.js"></script>
+</body>
+</html>

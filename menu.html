@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menú – Sizzle & Sear</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/menu.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand">Sizzle <span>&</span> Sear</a>
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="menu.html" class="active">Menú</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="sedes.html">Sedes</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <button class="cart-btn" aria-label="Carrito">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-count">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menú móvil">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== MENU HERO ===== -->
+  <section class="menu-hero">
+    <div class="menu-hero__smoke"></div>
+    <div class="menu-hero__content">
+      <h1 class="menu-hero__title">Nuestro Menú</h1>
+      <p class="menu-hero__sub">
+Forjados en el fuego, servidos con alma. Descubre nuestra cuidada selección de clásicos urbanos con un toque sofisticado.</p>
+    </div>
+  </section>
+
+  <!-- ===== CATEGORY TABS ===== -->
+  <div class="menu-tabs-wrap" id="menu-tabs-wrap">
+    <div class="menu-tabs" id="menuTabs">
+      <button class="tab-btn active" data-target="burgers">Hamburguesas exclusivas</button>
+      <button class="tab-btn" data-target="sides">Acompañamientos</button>
+      <button class="tab-btn" data-target="drinks">Bebidas frías</button>
+      <button class="tab-btn" data-target="sweets">Dulces callejeros</button>
+    </div>
+  </div>
+
+  <!-- ===== MAIN MENU CONTENT ===== -->
+  <main class="menu-main container">
+
+    <!-- ── Signature Burgers ── -->
+    <section class="menu-section" id="burgers">
+      <h2 class="menu-section__title">Hamburguesas exclusivas</h2>
+      <div class="burgers-grid">
+
+        <article class="burger-card reveal" data-name="The Ember King" data-price="18">
+          <div class="burger-card__img">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80" alt="The Ember King" />
+          </div>
+          <div class="burger-card__body">
+            <div class="burger-card__row">
+              <h3>El Rey Ascua</h3>
+              <span class="price">$18</span>
+            </div>
+            <p>Doble ración de carne wagyu, provolone ahumado, jalapeños asados ​​y nuestro alioli volcánico de la casa en un panecillo tostado con carbón vegetal.</p>
+            <div class="burger-card__tags">
+              <span class="tag tag--chef">Elección del chef</span>
+              <span class="tag tag--spicy">Extra picante</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="burger-card reveal" data-name="Smashed Grit" data-price="14">
+          <div class="burger-card__img">
+            <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=600&q=80" alt="Smashed Grit" />
+          </div>
+          <div class="burger-card__body">
+            <div class="burger-card__row">
+              <h3>Arena machacada</h3>
+              <span class="price">$14</span>
+            </div>
+            <p>Carne de res alimentada con pasto, picada tres veces, queso cheddar añejo, cebollas estofadas en cerveza y pepinillos en rodajas gruesas sobre un brioche mantecoso.</p>
+            <div class="burger-card__tags">
+              <span class="tag tag--crowd">Multitud favorita</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="burger-card reveal" data-name="Urban Truffle" data-price="22">
+          <div class="burger-card__img">
+            <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&q=80" alt="Urban Truffle" />
+          </div>
+          <div class="burger-card__body">
+            <div class="burger-card__row">
+              <h3>Trufa Urbana</h3>
+              <span class="price">$22</span>
+            </div>
+            <p>Mezcla de carne de res envejecida, mantequilla de trufa negra, champiñones silvestres salteados y glaseado de balsámico.</p>
+            <div class="burger-card__tags">
+              <span class="tag tag--premium">Nivel Premium</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── Acompañamientos ── -->
+    <section class="menu-section" id="sides">
+      <h2 class="menu-section__title">Acompañamientos</h2>
+      <div class="sides-grid">
+
+        <article class="side-card reveal" data-name="Gunpowder Fries" data-price="7">
+          <div class="side-card__img">
+            <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=300&q=80" alt="Papas Pólvora" />
+          </div>
+          <div class="side-card__body">
+            <div class="side-card__row">
+              <h3>Papas Pólvora</h3>
+              <span class="price">$7</span>
+            </div>
+            <p>Papas gruesas cocidas tres veces, mezcladas con una especia ahumada secreta y servidas con mayonesa de ajo asado.</p>
+          </div>
+        </article>
+
+        <article class="side-card reveal" data-name="Concrete Rings" data-price="9">
+          <div class="side-card__img">
+            <img src="https://images.unsplash.com/photo-1639024471283-03518883512d?w=300&q=80" alt="Aros de Cebolla" />
+          </div>
+          <div class="side-card__body">
+            <div class="side-card__row">
+              <h3>Aros de Cebolla</h3>
+              <span class="price">$9</span>
+            </div>
+            <p>Aros de cebolla dulce rebozados en cerveza stout y servidos con crema de rábano picante.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── Bebidas frías y dulces ── -->
+    <section class="menu-section" id="drinks">
+      <h2 class="menu-section__title">Bebidas frías y dulces</h2>
+      <div class="drinks-grid">
+
+        <!-- Grande izquierda -->
+        <article class="drink-card drink-card--hero reveal" data-name="Smoked Old Fashioned" data-price="12">
+            <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80" alt="Old Fashioned Ahumado" />
+            <div class="drink-card__overlay">
+              <span class="price">$12</span>
+              <h3>Old Fashioned Ahumado</h3>
+              <p>Bourbon infusionado con humo de nogal, amargos y una cáscara de naranja flameada.</p>
+        </article>
+
+        <!-- Columna derecha -->
+        <div class="drinks-col">
+
+          <!-- Molten Asphalt – ancho completo -->
+          <article class="drink-card drink-card--wide reveal" data-name="Molten Asphalt" data-price="11">
+            <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=700&q=80" alt="Asfalto Fundido" />
+            <div class="drink-card__overlay drink-card__overlay--bottom">
+              <div>
+                <h3>Asfalto Fundido <span class="price">$11</span></h3>
+                <p>Pastel lava de chocolate oscuro 70% con corazón de caramelo salado y helado de vainilla con carbón.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Fila inferior: Craft Sodas + Neon Shake -->
+          <div class="drinks-row">
+            <article class="drink-card drink-card--flat reveal" data-name="Craft Sodas" data-price="5">
+              <div class="drink-card__flat-body">
+                <span class="price">$5</span>
+                <h3>Sodas artesanales</h3>
+                <p>Selección rotativa de sodas botánicas artesanales: yuzu-jengibre, cereza ahumada o lima con agave.</p>
+                <div class="drink-icons">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 22H16M12 2L8 8H16L12 2ZM8 8C6.4 10 5 12.5 5 15C5 18.866 8.134 22 12 22C15.866 22 19 18.866 19 15C19 12.5 17.6 10 16 8"/></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 6v4l3 3"/></svg>
+                </div>
+              </div>
+            </article>
+
+            <article class="drink-card drink-card--shake reveal" data-name="The Neon Shake" data-price="9">
+              <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&q=80" alt="El Batido Neón" />
+              <div class="drink-card__overlay drink-card__overlay--bottom">
+                <h3>El Batido Neón</h3>
+                <span class="price">$9</span>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Dulces Callejeros (tab extra) ── -->
+    <section class="menu-section" id="sweets">
+      <h2 class="menu-section__title">Dulces callejeros</h2>
+      <div class="sides-grid">
+        <article class="side-card reveal" data-name="Cinder Waffle" data-price="8">
+          <div class="side-card__img">
+            <img src="https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=300&q=80" alt="Waffle de Ceniza" />
+          </div>
+          <div class="side-card__body">
+            <div class="side-card__row">
+              <h3>Waffle de Ceniza</h3>
+              <span class="price">$8</span>
+            </div>
+            <p>Waffle infusionado con carbón, jarabe de caramelo quemado, mascarpone batido y crumble de tocino confitado.</p>
+          </div>
+        </article>
+        <article class="side-card reveal" data-name="Ember Churros" data-price="7">
+          <div class="side-card__img">
+            <img src="https://i.pinimg.com/736x/fd/26/9f/fd269faf6f7ea3aa72b422fc6a546386.jpg" alt="Churros Ascua" />
+          </div>
+          <div class="side-card__body">
+            <div class="side-card__row">
+              <h3>Churros Ascua</h3>
+              <span class="price">$7</span>
+            </div>
+            <p>Churros fritos crujientes espolvoreados con azúcar de canela ahumada y servidos con salsa para mojar de chocolate oscuro.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="menu-footer">
+    <div class="menu-footer__inner container">
+      <div class="menu-footer__brand">
+        <p class="brand-name">Sizzle &amp; Sear</p>
+        <p>Elevando la comida callejera con fuego, pasión e ingredientes premium.</p>
+      </div>
+      <div class="menu-footer__links">
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos de servicio</a>
+        <a href="#">Carreras</a>
+        <a href="#">Kit de prensa</a>
+      </div>
+      <p class="menu-footer__copy">© 2024 Sizzle &amp; Sear. Cultura callejera elevada.</p>
+    </div>
+  </footer>
+
+  <!-- Floating Order Button -->
+  <button class="float-order" id="floatOrder">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+    Ordenar ahora
+  </button>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/menu.js"></script>
+</body>
+</html>
