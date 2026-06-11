@@ -4,8 +4,13 @@
    SHEETDB – Conexión con base de datos Excel
    ============================================================ */
 
-const SHEETDB_API_URL = 'https://sheetdb.io/api/v1/2pci9lbq5vmqp';
-
+// Agrega el '?t=' + Date.now() al final de tu endpoint
+fetch('https://sheetdb.io/api/v1/2pci9lbq5vmqp' + Date.now())
+  .then(res => res.json())
+  .then(data => {
+    // Aquí es donde pintas las hamburguesas en tu HTML
+    console.log(data); 
+  });
 /**
  * Envía datos a SheetDB usando POST.
  * @param {{data: any}} payload
