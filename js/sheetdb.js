@@ -23,10 +23,6 @@ async function cargarMenuHamburguesas() {
       
       // 1. La primera de tu Excel va a la izquierda como la Card Grande
       const primeraBurger = data[0];
-
-      // Esto borra cualquier "S/." que venga del Excel y le pone un formato limpio y uniforme
-      let precioLimpio = burger.precio.toString().replace(/S\/\.?\s?/g, '');
-      
       htmlContenido += `
         <article class="menu-card menu-card--hero" data-price="${primeraBurger.precio}" data-name="${primeraBurger.nombre}">
           <div class="menu-card__img-wrap">
