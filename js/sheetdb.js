@@ -1,6 +1,5 @@
 async function cargarMenuHamburguesas() {
   try {
-    // URL con anti-cache para jalar los datos actualizados
     const response = await fetch(`https://sheetdb.io/api/v1/2pci9lbq5vmqp?t=${Date.now()}`);
     
     if (!response.ok) {
@@ -13,11 +12,13 @@ async function cargarMenuHamburguesas() {
     const contenedorMenu = document.getElementById('contenedor-menu');
     
     if (contenedorMenu && data.length > 0) {
-      contenedorMenu.innerHTML = ''; // Limpiamos el contenedor por si acaso
+      contenedorMenu.innerHTML = ''; 
 
       let htmlContenido = '';
 
-      // 1. La primera hamburguesa de tu Excel será la "Card Grande" (Hero)
+      // --- BLOQUE 1: LAS 3 PRIMERAS HAMBURGUESAS (Diseño Asimétrico Premium) ---
+      
+      // 1. La primera hamburguesa va como "Card Grande" (Hero) a la izquierda
       const primeraBurger = data[0];
       htmlContenido += `
         <article class="menu-card menu-card--hero" data-price="${primeraBurger.precio}" data-name="${primeraBurger.nombre}">
@@ -36,15 +37,14 @@ async function cargarMenuHamburguesas() {
         </article>
       `;
 
-      // 2. Si hay más hamburguesas en tu Excel, las metemos en la columna de "Cards Pequeñas"
+      // 2. La segunda y tercera van en la columna derecha (`menu-col`)
       if (data.length > 1) {
         htmlContenido += `<div class="menu-col">`;
         
-        // Recorremos desde la segunda hamburguesa en adelante
-        for (let i = 1; i < data.length; i++) {
+        // Tomamos el elemento 2 (índice 1) y el elemento 3 (índice 2) si existen
+        const limiteBloqueOriginal = Math.min(data.length, 3);
+        for (let i = 1; i < limiteBloqueOriginal; i++) {
           const burger = data[i];
-          
-          // Renderizamos la tarjeta pequeña respetando tus clases CSS
           htmlContenido += `
             <article class="menu-card menu-card--small" data-price="${burger.precio}" data-name="${burger.nombre}">
               <div class="menu-card__img-wrap">
@@ -62,17 +62,41 @@ async function cargarMenuHamburguesas() {
           `;
         }
         
-        htmlContenido += `</div>`; // Cerramos la columna pequeña
+        htmlContenido += `</div>`; // Cerramos la columna derecha original
       }
 
-      // 3. Metemos todo el bloque estructural dentro de tu div "contenedor-menu"
-      contenedorMenu.innerHTML = htmlContenido;
+      // --- BLOQUE 2: DE LA 4TA HAMBURGUESA EN ADELANTE (Filas de tarjetas ordenadas) ---
+      if (data.length > 3) {
+        // Creamos un contenedor especial para las extras que ocupe todo el ancho inferior
+        htmlContenido += `<div class="menu-grid-extras" style="grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; width: 100%; margin-top: 2rem;">`;
 
+        for (let i = 3; i < data.length; i++) {
+          const burger = data[i];
+          htmlContenido += `
+            <article class="menu-card menu-card--small" data-price="${burger.precio}" data-name="${burger.nombre}" style="width: 100%;">
+              <div class="menu-card__img-wrap">
+                <img src="${burger.imagen}" alt="${burger.nombre}" />
+              </div>
+              <div class="menu-card__body">
+                <div class="menu-card__row">
+                  <h3 class="menu-card__name">${burger.nombre}</h3>
+                  <p class="menu-card__price">S/. ${burger.precio}</p>
+                </div>
+                <button class="btn btn-outline btn-sm add-cart" style="width: 100%; margin-top: 1rem;">Agregar al Carrito</button>
+              </div>
+            </article>
+          `;
+        }
+
+        htmlContenido += `</div>`; // Cerramos el contenedor de extras
+      }
+
+      // Inyectamos todo el HTML estructurado
+      contenedorMenu.innerHTML = htmlContenido;
     }
   } catch (error) {
-    console.error('Hubo un problema al cargar el menú:', error);
+    console.error('Hubo un problema al ordenar el menú:', error);
   }
 }
 
-// Inicializar la carga al montar el DOM
 document.addEventListener('DOMContentLoaded', cargarMenuHamburguesas);
