@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto – Sizzle & Sear</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/contacto.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand">Sizzle <span>&</span> Sear</a>
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="menu.html">Menú</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="sedes.html">Sedes</a>
+        <a href="contacto.html" class="active">Contacto</a>
+      </nav>
+      <button class="cart-btn" aria-label="Carrito">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <span class="cart-count">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menú móvil">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="ct-hero">
+    <div class="ct-hero__bg">
+      <img
+        src="https://images.unsplash.com/photo-1544025162-d76694265947?w=1600&q=80"
+        alt="Fuego en parrilla"
+        class="ct-hero__img"
+      />
+      <div class="ct-hero__overlay"></div>
+      <!-- Partículas de chispas decorativas -->
+      <div class="ct-hero__sparks" aria-hidden="true">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="ct-hero__content container">
+      <h1 class="ct-hero__title">CONTACTA</h1>
+      <p class="ct-hero__sub">¿Tienes antojo? ¿Una pregunta? ¿O solo quieres hablar de comida?<br/>Estamos aquí para los aficionados de la comida callejera.</p>
+    </div>
+  </section>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <section class="ct-main">
+    <div class="container ct-layout">
+
+      <!-- ── LEFT: Form ── -->
+      <div class="ct-form-wrap reveal">
+        <h2 class="ct-form-title">Envía un mensaje</h2>
+        <form class="ct-form" id="contactForm" novalidate>
+          <div class="ct-form__row">
+            <div class="ct-field">
+              <label for="c-name">Nombre</label>
+              <input type="text" id="c-name" name="name" placeholder="Tu nombre" />
+            </div>
+            <div class="ct-field">
+              <label for="c-email">Correo</label>
+              <input type="email" id="c-email" name="email" placeholder="Tu correo electrónico" />
+            </div>
+          </div>
+          <div class="ct-field">
+            <label for="c-subject">Asunto</label>
+            <div class="ct-select-wrap">
+              <select id="c-subject" name="subject">
+                <option value="general">Consulta general</option>
+                <option value="reservation">Solicitud de reserva</option>
+                <option value="catering">Catering</option>
+                <option value="press">Prensa y medios</option>
+                <option value="careers">Carreras</option>
+                <option value="feedback">Opiniones</option>
+              </select>
+              <svg class="ct-select-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </div>
+          <div class="ct-field">
+            <label for="c-message">Mensaje</label>
+            <textarea id="c-message" name="message" rows="6" placeholder="¿Qué tienes en mente?"></textarea>
+          </div>
+          <button type="submit" class="btn-send">ENVIAR MENSAJE</button>
+        </form>
+      </div>
+
+      <!-- ── RIGHT: Sidebar ── -->
+      <aside class="ct-sidebar">
+
+        <!-- Connect Directly -->
+        <div class="ct-sidebar-card reveal">
+          <h3 class="ct-sidebar-card__title">Conecta directamente</h3>
+          <ul class="ct-contact-list">
+            <li class="ct-contact-list__item">
+              <span class="ct-contact-list__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              <div>
+                <p class="ct-contact-list__label">CORREO</p>
+                <a href="mailto:hello@sizzleandsear.com" class="ct-contact-list__value">hello@sizzleandsear.com</a>
+              </div>
+            </li>
+            <li class="ct-contact-list__item">
+              <span class="ct-contact-list__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <div>
+                <p class="ct-contact-list__label">TELÉFONO</p>
+                <a href="tel:+15558920012" class="ct-contact-list__value">+1 (555) 892-0012</a>
+              </div>
+            </li>
+            <li class="ct-contact-list__item">
+              <span class="ct-contact-list__icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <div>
+                <p class="ct-contact-list__label">SEDE CENTRAL</p>
+                <span class="ct-contact-list__value">1221 Street Art Alley,<br/>Downtown Sector, NY 10012</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Socials -->
+        <div class="ct-sidebar-card reveal">
+            <h3 class="ct-sidebar-card__title">Redes sociales</h3>
+          <div class="ct-socials-grid">
+
+            <a href="https://www.instagram.com" target="_blank" rel="noopener" class="ct-social-btn" aria-label="Instagram">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+              <span>Instagram</span>
+            </a>
+
+            <a href="https://www.tiktok.com" target="_blank" rel="noopener" class="ct-social-btn" aria-label="TikTok">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/>
+              </svg>
+              <span>TikTok</span>
+            </a>
+
+            <a href="https://www.twitter.com" target="_blank" rel="noopener" class="ct-social-btn" aria-label="Twitter/X">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+              <span>Twitter/X</span>
+            </a>
+
+            <a href="https://www.facebook.com" target="_blank" rel="noopener" class="ct-social-btn" aria-label="Facebook">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+              <span>Facebook</span>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Mini Map -->
+        <div class="ct-map-card reveal">
+          <div class="ct-map-frame">
+            <iframe
+              class="ct-map-iframe"
+              src="https://maps.google.com/maps?q=Lower+Manhattan+New+York+NY&t=&z=14&ie=UTF8&iwloc=&output=embed"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Sede central Sizzle &amp; Sear"
+            ></iframe>
+            <!-- Tinte oscuro + naranja igual que la imagen -->
+            <div class="ct-map-tint" aria-hidden="true"></div>
+            <!-- Pin central animado -->
+            <div class="ct-map-pin" aria-hidden="true">
+              <div class="ct-map-pin__ring"></div>
+              <div class="ct-map-pin__dot"></div>
+            </div>
+          </div>
+          <div class="ct-map-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            ENCUÉNTRANOS EN EL CENTRO
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="ct-faq">
+    <div class="container">
+      <div class="ct-faq__header reveal">
+        <h2 class="ct-faq__title">Preguntas frecuentes</h2>
+        <p class="ct-faq__sub">Todo lo que necesitas saber sobre la experiencia Sizzle &amp; Sear.</p>
+      </div>
+      <div class="ct-faq__grid">
+
+        <div class="ct-faq__item reveal">
+          <h3 class="ct-faq__q">¿Aceptan reservaciones?</h3>
+          <p class="ct-faq__a">Operamos por orden de llegada para una experiencia callejera auténtica. Sin embargo, para grupos de 10 o más, contáctanos con 24 horas de anticipación.</p>
+        </div>
+
+        <div class="ct-faq__item reveal">
+          <h3 class="ct-faq__q">¿Hay opciones veganas?</h3>
+          <p class="ct-faq__a">Absolutamente. Nuestra hamburguesa 'Plant-Based Sear' es una favorita, con hamburguesas vegetales premium y nuestros toppings estilo callejero.</p>
+        </div>
+
+        <div class="ct-faq__item reveal">
+          <h3 class="ct-faq__q">¿Dónde encuentro sus food trucks?</h3>
+          <p class="ct-faq__a">Revisa nuestra página de Sedes para seguimiento GPS en tiempo real de nuestras unidades móviles por la ciudad. Actualizamos ubicaciones diariamente a las 10 a.m.</p>
+        </div>
+
+        <div class="ct-faq__item reveal">
+          <h3 class="ct-faq__q">¿Ofrecen catering?</h3>
+          <p class="ct-faq__a">¡Sí! Llevamos el fuego a tu evento. Completa el formulario de contacto de arriba con 'Catering' como asunto para una cotización personalizada.</p>
+        </div>
+
+        <div class="ct-faq__item reveal">
+          <h3 class="ct-faq__q">¿Cuáles son sus horarios de apertura?</h3>
+          <p class="ct-faq__a">Cada sede tiene su propio horario. Generalmente abrimos desde las 12:00 p.m. Consulta la página de Sedes para horarios exactos por sede.</p>
+        </div>
+
+        <div class="ct-faq__item reveal">
+          <h3 class="ct-faq__q">¿Tienen opciones sin gluten?</h3>
+          <p class="ct-faq__a">Sí, ofrecemos panecillos brioche sin gluten bajo pedido. Dile a tu mesero y lo haremos realidad sin comprometer el sabor.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="ct-footer">
+    <div class="container ct-footer__inner">
+      <div class="ct-footer__brand">
+        <p class="ct-footer__name">Sizzle &amp; Sear</p>
+        <p class="ct-footer__copy">© 2024 Sizzle &amp; Sear. Cultura callejera elevada.</p>
+      </div>
+      <div class="ct-footer__links">
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos de servicio</a>
+        <a href="#">Carreras</a>
+        <a href="#">Kit de prensa</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/sheetdb.js"></script>
+  <script src="js/contacto.js"></script>
+</body>
+</html>
