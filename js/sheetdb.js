@@ -1,82 +1,59 @@
 'use strict';
 
 /* ============================================================
-   SHEETDB – Conexión con base de datos Excel
+   SHEETDB – Conexión con base de datos de Hamburguesas
    ============================================================ */
 
-// Agrega el '?t=' + Date.now() al final de tu endpoint
-fetch('https://sheetdb.io/api/v1/2pci9lbq5vmqp' + Date.now())
-  .then(res => res.json())
-  .then(data => {
-    // Aquí es donde pintas las hamburguesas en tu HTML
-    console.log(data); 
-  });
-/**
- * Envía datos a SheetDB usando POST.
- * @param {{data: any}} payload
- * @returns {Promise<any>}
- */
-async function postSheetDB(payload) {
-  const response = await fetch(SHEETDB_API_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(payload),
-  });
-
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`SheetDB error ${response.status}: ${errorText}`);
-  }
-
-  return response.json();
-}
+// 1. Configuramos tu URL base con la API que me pasaste
+const SHEETDB_API_URL = 'https://sheetdb.io/api/v1/2pci9lbq5vmqp';
 
 /**
- * Agrega un registro de contacto a la hoja de Excel.
- * @param {{name:string,email:string,subject:string,message:string,date:string}} contact
- * @returns {Promise<any>}
+ * Obtiene las hamburguesas de Excel y las edita directamente en la página.
  */
-async function addContactRecord(contact) {
-  return postSheetDB({ data: [contact] });
-}
-
-/**
- * Agrega un registro de suscripción (newsletter / mailing list).
- * @param {{email:string,subscribed_at:string}} record
- * @returns {Promise<any>}
- */
-async function addSubscriptionRecord(record) {
-  return postSheetDB({ data: [record] });
-}
-
-/**
- * Verifica que la API esté disponible.
- * @returns {Promise<boolean>}
- */
-async function checkSheetDBConnection() {
+async function cargarMenuHamburguesas() {
   try {
-    const response = await fetch(SHEETDB_API_URL);
-    return response.ok;
-  } catch (error) {
-    return false;
-  }
-}
-
-/**
- * Obtiene todos los registros de SheetDB.
- * @returns {Promise<Array>}
- */
-async function getSheetDBRecords() {
-  try {
-    const response = await fetch(SHEETDB_API_URL);
+    // Armamos la URL agregando el '?t=' para romper el caché del navegador
+    const urlConAntiCache = `${SHEETDB_API_URL}?t=${Date.now()}`;
+    
+    const response = await fetch(urlConAntiCache);
+    
     if (!response.ok) {
-      throw new Error(`SheetDB error ${response.status}`);
+      throw new Error(`Error al conectar con SheetDB: ${response.status}`);
     }
-    return await response.json();
+    
+    const data = await response.json();
+    console.log("¡Hamburguesas cargadas con éxito desde Excel!", data);
+    
+    // 2. BUSCAMOS TU CONTENEDOR EN EL HTML
+    // (Reemplaza 'contenedor-menu' por el ID real de tu sección de productos en tu HTML)
+    const contenedorMenu = document.getElementById('contenedor-menu');
+    
+    if (contenedorMenu) {
+      contenedorMenu.innerHTML = ''; // Limpiamos las tarjetas estáticas que tenías antes
+
+      // Recorremos las filas de tu Excel y las metemos dinámicamente al HTML
+      data.forEach(burger => {
+        contenedorMenu.innerHTML += `
+          <div class="card-hamburguesa">
+            <img src="${burger.imagen}" alt="${burger.nombre}" class="img-producto">
+            <div class="info-producto">
+              <h3>${burger.nombre}</h3>
+              <p>${burger.descripcion}</p>
+              <span class="precio">S/. ${burger.precio}</span>
+            </div>
+          </div>
+        `;
+      });
+    } else {
+      console.warn("Alerta: No se encontró el contenedor HTML. Revisa el ID en tu archivo .html");
+    }
+
+    return data;
   } catch (error) {
-    console.error('Error fetching data from SheetDB:', error);
+    console.error('Hubo un problema al cargar el menú:', error);
     return [];
   }
 }
+
+// Ejecutamos la función de manera automática cuando la página termine de cargar
+document.addEventListener('DOMContentLoaded', cargarMenuHamburguesas);
