@@ -17,11 +17,18 @@ async function cargarMenuHamburguesas() {
       contenedorMenu.innerHTML = ''; 
 
       let htmlContenido = '';
+      
 
       // === BLOQUE 1: LAS 3 PRIMERAS HAMBURGUESAS (Estructura nativa original) ===
       
       // 1. La primera de tu Excel va a la izquierda como la Card Grande
       const primeraBurger = data[0];
+
+      // Esto borra cualquier "S/." que venga del Excel y le pone un formato limpio y uniforme
+      let precioLimpio = burger.precio.toString().replace(/S\/\.?\s?/g, '');
+      // Opción A: Si tu base de datos devuelve SOLO el número (ej: 15.50)
+      <p class="menu-card__price">S/. ${parseFloat(primeraBurger.precio).toFixed(2)}</p>
+      
       htmlContenido += `
         <article class="menu-card menu-card--hero" data-price="${primeraBurger.precio}" data-name="${primeraBurger.nombre}">
           <div class="menu-card__img-wrap">
