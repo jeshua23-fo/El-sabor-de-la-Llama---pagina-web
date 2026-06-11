@@ -58,3 +58,20 @@ async function checkSheetDBConnection() {
     return false;
   }
 }
+
+/**
+ * Obtiene todos los registros de SheetDB.
+ * @returns {Promise<Array>}
+ */
+async function getSheetDBRecords() {
+  try {
+    const response = await fetch(SHEETDB_API_URL);
+    if (!response.ok) {
+      throw new Error(`SheetDB error ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching data from SheetDB:', error);
+    return [];
+  }
+}

@@ -143,6 +143,79 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
+/* ============================================================
+   CARGA DE DATOS DESDE SHEETDB
+   ============================================================ */
+
+// Función para cargar y mostrar datos desde SheetDB
+async function cargarDatosSheetDB() {
+  const contenedor = document.getElementById('sheetdb-content');
+  if (!contenedor) return;
+
+  try {
+    // Verificar si la función getSheetDBRecords está disponible
+    if (typeof getSheetDBRecords !== 'function') {
+      contenedor.innerHTML = '<p>Error: Función de SheetDB no disponible.</p>';
+      return;
+    }
+
+    const datos = await getSheetDBRecords();
+    
+    if (!datos || datos.length === 0) {
+      contenedor.innerHTML = `
+        <div class="data-empty">
+          <p>No hay datos en la base de datos.</p>
+          <p class="data-hint">Edita el Excel en SheetDB para agregar información.</p>
+        </div>
+      `;
+      return;
+    }
+
+    // Crear tabla con los datos
+    let html = '<div class="data-table-wrap"><table class="data-table">';
+    
+    // Encabezados (usando las claves del primer objeto)
+    const headers = Object.keys(datos[0]);
+    html += '<thead><tr>';
+    headers.forEach(header => {
+      html += `<th>${header}</th>`;
+    });
+    html += '</tr></thead>';
+    
+    // Filas de datos
+    html += '<tbody>';
+    datos.forEach(fila => {
+      html += '<tr>';
+      headers.forEach(header => {
+        const valor = fila[header] || '';
+        html += `<td>${valor}</td>`;
+      });
+      html += '</tr>';
+    });
+    html += '</tbody></table></div>';
+
+    contenedor.innerHTML = html;
+    
+    // Agregar animación de reveal
+    contenedor.classList.add('reveal');
+    
+  } catch (error) {
+    console.error('Error cargando datos de SheetDB:', error);
+    contenedor.innerHTML = `
+      <div class="data-error">
+        <p>Error al cargar los datos.</p>
+        <p class="data-hint">Verifica que SheetDB esté configurado correctamente.</p>
+      </div>
+    `;
+  }
+}
+
+// Cargar datos cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+  // Pequeño delay para asegurar que sheetdb.js esté completamente cargado
+  setTimeout(cargarDatosSheetDB, 100);
+});
+
 
 
 /* ============================================================
