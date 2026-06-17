@@ -18,7 +18,6 @@ const CONTACTO_API_CONFIG = {
  * @param {string} contact.email - Correo electrónico
  * @param {string} contact.subject - Asunto (general, reservation, catering, etc.)
  * @param {string} contact.message - Mensaje del cliente
- * @param {string} contact.date - Fecha y hora en formato ISO
  * @returns {Promise<Object>} Respuesta de la API
  */
 async function addContactRecord(contact) {
@@ -29,15 +28,13 @@ async function addContactRecord(contact) {
 
   const { apiUrl, timeout } = CONTACTO_API_CONFIG;
 
-  // Preparar el payload para SheetDB (formato simple)
   // Preparar el payload con los nombres de columna exactos de tu Excel en español
   const payload = {
     data: [{
-      nombre: contact.name,    // Mapea 'name' a la columna 'nombre'
-      correo: contact.email,   // Mapea 'email' a la columna 'correo'
+      nombre: contact.name,    // Mapea 'name' a la columna 'nombre' de tu Excel
+      correo: contact.email,   // Mapea 'email' a la columna 'correo' de tu Excel
       asunto: contact.subject || 'general', // Mapea a 'asunto'
       mensaje: contact.message // Mapea 'message' a la columna 'mensaje'
-      // Quitamos 'date' porque no está en tu Excel actual
     }]
   };
 
@@ -126,7 +123,7 @@ async function getAllContactRecords() {
 }
 
 /**
- * Busca contactos por correo electrónico
+ * Busca contactos por correo electrónico de manera segura adaptado a tus columnas
  * @param {string} email - Correo a buscar
  * @returns {Promise<Array>} Registros que coinciden
  */
@@ -141,8 +138,8 @@ async function searchContactByEmail(email) {
   const timeoutId = setTimeout(() => controller.abort(), timeout);
 
   try {
-    // SheetDB permite búsqueda con parámetros query
-    const searchUrl = `${apiUrl}?search[email]=${encodeURIComponent(email)}`;
+    // Cambiado 'search[email]' a 'search[correo]' porque tu columna está en español
+    const searchUrl = `${apiUrl}/search?correo=${encodeURIComponent(email)}`;
     
     const response = await fetch(searchUrl, {
       method: 'GET',
@@ -185,7 +182,16 @@ async function testContactoAPI() {
 // Mensaje de inicialización en consola
 console.log('📞 Contacto API Module cargado - API:', CONTACTO_API_CONFIG.apiUrl);
 
-// Exportar funciones (disponibles globalmente en el navegador)
+// === EXPORTACIÓN DE FUNCIONES PARA EL NAVEGADOR ===
+// Esto asegura que 'addContactRecord' esté visible en cualquier otro script (como contacto.js)
+if (typeof window !== 'undefined') {
+  window.addContactRecord = addContactRecord;
+  window.getAllContactRecords = getAllContactRecords;
+  window.searchContactByEmail = searchContactByEmail;
+  window.testContactoAPI = testContactoAPI;
+}
+
+// Exportación complementaria para entornos Node.js (si aplica)
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     addContactRecord,
